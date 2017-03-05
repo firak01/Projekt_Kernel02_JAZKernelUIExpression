@@ -3,17 +3,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="/JAZKernel"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/JAZKernelUI"/>
-	<classpathentry kind="lib" path="/ZKernelFileCollection/commons-jexl-1.1.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/JAZKernelLogReport"/>
-	<classpathentry kind="lib" path="/ZKernelFileCollection/commons-logging-1.1.jar"/>
-	<classpathentry kind="lib" path="/ZKernelFileCollection/commons-logging-adapters-1.1.jar"/>
-	<classpathentry kind="lib" path="/ZKernelFileCollection/commons-logging-api-1.1.jar"/>
-	<classpathentry kind="lib" path="/ZKernelFileZJar/JAZKernelUI_fat.jar" sourcepath="/JAZKernelUI">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/1fgl/workspace/Eclipse3FGL/ZKernelDocumentation/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry exported="true" kind="src" path="/JAZKernel"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/JAZKernelUI"/>
+	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-jexl-1.1.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/JAZKernelLogReport"/>
+	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-adapters-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-api-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
