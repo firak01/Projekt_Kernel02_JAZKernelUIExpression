@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="src" path="/JAZKernel"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/JAZKernelUI"/>
 	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-jexl-1.1.jar"/>
@@ -10,5 +9,16 @@
 	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-adapters-1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/ZKernelFileCollection/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.0 - FGL">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
