@@ -7,11 +7,12 @@ import javax.swing.JTextField;
 
 import basic.zBasic.ExceptionZZZ;
 import basic.zKernelUI.component.KernelJPanelCascadedZZZ;
+import basic.zKernel.IKernelZZZ;
 import basic.zKernel.KernelZZZ;
 
 
 public class PanelExpression4TestZZZ extends KernelJPanelCascadedZZZ{
-		public PanelExpression4TestZZZ(KernelZZZ objKernel, JFrame frameParent) throws ExceptionZZZ{
+		public PanelExpression4TestZZZ(IKernelZZZ objKernel, JFrame frameParent) throws ExceptionZZZ{
 			super(objKernel, frameParent);
 	       		
 			//### Layout Manager
