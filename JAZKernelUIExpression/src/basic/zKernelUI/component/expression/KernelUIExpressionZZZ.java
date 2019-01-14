@@ -10,7 +10,7 @@ import org.apache.commons.jexl.ExpressionFactory;
 import org.apache.commons.jexl.JexlContext;
 import org.apache.commons.jexl.JexlHelper;
 
-import basic.zKernel.KernelZZZ;
+import basic.zKernel.IKernelZZZ;
 import basic.zBasic.ExceptionZZZ;
 import basic.zBasic.ReflectCodeZZZ;
 import basic.zBasic.util.datatype.string.StringZZZ;
@@ -21,7 +21,7 @@ import basic.zKernelUI.component.KernelJPanelCascadedZZZ;
 
 /**Diese Klasse dient zum "Rechnen" mit Komponenten.
  *  Es wird dabei von den Aliaswerten ausgegangen, die in dem "KernelJPanelCascadedZZZ" hinterlegt sind.
- *  So soll dann folgender Ausdruck aufgelöst werden:
+ *  So soll dann folgender Ausdruck aufgelï¿½st werden:
  *  		"textLastName?textFirstName + ' ' + textLastName : "" 
  *  
  *  ==> 
@@ -42,15 +42,15 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 		String[] saFlag = {"init"};
 		KernelExpressionUINew_(null, null, saFlag);
 	}	
-	public KernelUIExpressionZZZ(KernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent, String[] saFlag) throws ExceptionZZZ{
+	public KernelUIExpressionZZZ(IKernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent, String[] saFlag) throws ExceptionZZZ{
 		super(objKernel);
 		KernelExpressionUINew_(frameParent, null, null);
 	}
-	public KernelUIExpressionZZZ(KernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent) throws ExceptionZZZ{
+	public KernelUIExpressionZZZ(IKernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent) throws ExceptionZZZ{
 		super(objKernel);
 		KernelExpressionUINew_(frameParent, null, null);
 	}
-	public KernelUIExpressionZZZ(KernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent, KernelJPanelCascadedZZZ panelDefault) throws ExceptionZZZ{
+	public KernelUIExpressionZZZ(IKernelZZZ objKernel, KernelJFrameCascadedZZZ frameParent, KernelJPanelCascadedZZZ panelDefault) throws ExceptionZZZ{
 		super(objKernel);
 		KernelExpressionUINew_(frameParent, panelDefault, null);
 	}
@@ -58,7 +58,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 	
 	private void KernelExpressionUINew_(KernelJFrameCascadedZZZ frameParent, KernelJPanelCascadedZZZ panelDefault, String[] saFlag) throws ExceptionZZZ{
 		main:{	
-			 //setzen der übergebenen Flags	
+			 //setzen der Ã¼bergebenen Flags	
 			  if(saFlag != null){
 				  for(int iCount = 0;iCount<=saFlag.length-1;iCount++){
 					  String stemp = saFlag[iCount];
@@ -85,26 +85,26 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 			  }
 			  
 			  
-			  //Vereinfacht jetzt den benötigten JexlContext erstellen
+			  //Vereinfacht jetzt den benï¿½tigten JexlContext erstellen
 			  this.jc = JexlHelper.createContext();	
 			 	
 		}//end main:
 	}
 	
-	/**Berechnet den Ausdruck. In einem Ausdruck muss immer er PanelAlias stehen oder das Default Panel muß im Constructor übergeben worden sein !!!
+	/**Berechnet den Ausdruck. In einem Ausdruck muss immer er PanelAlias stehen oder das Default Panel muï¿½ im Constructor ï¿½bergeben worden sein !!!
 	 *  Merke: Bei Verwendung dieser Methode gibt es auch keinen Alternativen DEFAUTL PANEL ALIAS
 	 *  
-	 * Beispiel für einen Ausdruck, der hiermit berechnet werden soll und aus einem Bedingungsteil und einem Ergebnisteil besteht
+	 * Beispiel fï¿½r einen Ausdruck, der hiermit berechnet werden soll und aus einem Bedingungsteil und einem Ergebnisteil besteht
 	 * 
 	 *         myPanel1<./>textLastName.getText()<?/>myPanel1<./>textFirstName.getText<+/>' '<+/>myPanel1<./>textLastName.getText<:/>''
 	 *         
 	 *         Also: Falls der Nachname in dem entsprechenden Feld eingegeben ist,
-	 *                 Wird eine Berechnung zurückgegeben Vorname und Nachname.
+	 *                 Wird eine Berechnung zurï¿½ckgegeben Vorname und Nachname.
 	 *                 Ansonsten nur ein Leerstring.
 	 *         
-	 *         //MERKE: Eine Verschachtelung der Ausdrücke ist momentan nicht erlaubt.
-	 *		   //MERKE: Eine Formel im Bedingungsteil ist momentan nicht erlaubt. Es kann nur auf gefüllt/nicht gefüllt geprüft werden.
-	 *		   //MERKE: Es ist nicht möglich Parameter in den 'konfigurierten Methoden der Komponenten' zu übergeben.
+	 *         //MERKE: Eine Verschachtelung der Ausdrï¿½cke ist momentan nicht erlaubt.
+	 *		   //MERKE: Eine Formel im Bedingungsteil ist momentan nicht erlaubt. Es kann nur auf gefï¿½llt/nicht gefï¿½llt geprï¿½ft werden.
+	 *		   //MERKE: Es ist nicht mï¿½glich Parameter in den 'konfigurierten Methoden der Komponenten' zu ï¿½bergeben.
 	 *        //            Daher sind Klammern hinter den Methoden nicht erlaubt
 	 *        //MERKE:  Lediglich PLUS ist im Ergebnisteil erlaubt.
 	 *         
@@ -122,17 +122,17 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 	
 	/**Berechnet den Ausdruck. In einem Ausdruck muss immer er PanelAlias stehen. Falls nicht, wird hier ein Default-Alias angegeben.
 	 *  
-	 * Beispiel für einen Ausdruck, der hiermit berechnet werden soll und aus einem Bedingungsteil und einem Ergebnisteil besteht
+	 * Beispiel fï¿½r einen Ausdruck, der hiermit berechnet werden soll und aus einem Bedingungsteil und einem Ergebnisteil besteht
 	 * 
 	 *         myPanel1<./>textLastName.getText()<?/>myPanel1<./>textFirstName.getText<+/>' '<+/>myPanel1<./>textLastName.getText<:/>''
 	 *         
 	 *         Also: Falls der Nachname in dem entsprechenden Feld eingegeben ist,
-	 *                 Wird eine Berechnung zurückgegeben Vorname und Nachname.
+	 *                 Wird eine Berechnung zurï¿½ckgegeben Vorname und Nachname.
 	 *                 Ansonsten nur ein Leerstring.
 	 *         
-	 *         //MERKE: Eine Verschachtelung der Ausdrücke ist momentan nicht erlaubt.
-	 *		   //MERKE: Eine Formel im Bedingungsteil ist momentan nicht erlaubt. Es kann nur auf gefüllt/nicht gefüllt geprüft werden.
-	 *		   //MERKE: Es ist nicht möglich Parameter in den 'konfigurierten Methoden der Komponenten' zu übergeben.
+	 *         //MERKE: Eine Verschachtelung der Ausdrï¿½cke ist momentan nicht erlaubt.
+	 *		   //MERKE: Eine Formel im Bedingungsteil ist momentan nicht erlaubt. Es kann nur auf gefï¿½llt/nicht gefï¿½llt geprï¿½ft werden.
+	 *		   //MERKE: Es ist nicht mï¿½glich Parameter in den 'konfigurierten Methoden der Komponenten' zu ï¿½bergeben.
 	 *        //            Daher sind Klammern hinter den Methoden nicht erlaubt
 	 *        //MERKE:  Lediglich PLUS ist im Ergebnisteil erlaubt.
 	 *         
@@ -181,7 +181,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 					bConditionFullfilled = true;
 				}
 			}else{
-				//Es gibt keine Formel für den Bedingungsteil
+				//Es gibt keine Formel fï¿½r den Bedingungsteil
 				sFormulaFormulaRaw = saCondition[0];
 				bConditionFullfilled = true;
 			}
@@ -212,7 +212,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 			this.setFormulaPartCurrent(sExpressionPartRaw);
 			
 			
-//			Test auf das Panel, das diesem Frame hinzugefügt wurde
+//			Test auf das Panel, das diesem Frame hinzugefï¿½gt wurde
 			KernelJFrameCascadedZZZ frmExpressionTest = this.getFrameParent();
 			KernelJPanelCascadedZZZ panelRoot = frmExpressionTest.getPaneContent();
 			
@@ -220,18 +220,18 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 			String sFormulaFilled=null;
 			
 //			1. Tokenizer mit den Aliasnamen erstellen. Trennzeichen "<+/>"
-			//NEIN, der Tokenizer betrachtet nur einzelne Charkter-Zeichen als Delimiter    StringTokenizer tokenizer = new StringTokenizer(sExpressionPartRaw, "<+/>", false); //Der Delimiter selber soll nicht zurückgegeben werden
+			//NEIN, der Tokenizer betrachtet nur einzelne Charkter-Zeichen als Delimiter    StringTokenizer tokenizer = new StringTokenizer(sExpressionPartRaw, "<+/>", false); //Der Delimiter selber soll nicht zurï¿½ckgegeben werden
 			String[] saExpressionPart = StringZZZ.explode(sExpressionPartRaw, "<+/>");
 						
 			
 //			2. In einer Schleife die Werte der Aliasnamen durchgehen. 
-			//        2a. Falls der Aliasname nicht existiert, wird der String komplett als konstante gesehen und übernommen
+			//        2a. Falls der Aliasname nicht existiert, wird der String komplett als konstante gesehen und ï¿½bernommen
 			//        2b. Falls der Aliasname existiert, wird der Komponentenname geholt,
 			for(int icountPart=0; icountPart<=saExpressionPart.length-1; icountPart++){				
 				String sExpressionPart = saExpressionPart[icountPart];
 				
 //				++++++++    3. diesen Ausdruck ggf. noch in einen PanelAlias und einen FeldAlias zerlegen
-				//Merke: Die Methoden einer Komponente müssen auch angegeben werden und werden nur durch einfachen Punkt '.' hinter den FeldAlias gehängt.
+				//Merke: Die Methoden einer Komponente mï¿½ssen auch angegeben werden und werden nur durch einfachen Punkt '.' hinter den FeldAlias gehï¿½ngt.
 				KernelJPanelCascadedZZZ panelCascaded = null;
 				String[] saPanelPart = StringZZZ.explode(sExpressionPart, "<./>");
 				
@@ -260,7 +260,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 						}
 					}
 				}else{
-					//FALL: IM AUSDRUCK WURDE KEIN PANELNAME ANGEGEBEN. ERGO AUF EIN DEFAULT-PANEL ZURÜCKGREIFEN
+					//FALL: IM AUSDRUCK WURDE KEIN PANELNAME ANGEGEBEN. ERGO AUF EIN DEFAULT-PANEL ZURï¿½CKGREIFEN
 					sObject = saPanelPart[0];
 					
 					
@@ -296,10 +296,10 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 					//++++++++++++++++++ 4b. Den Objekt Teil noch in Objekt und Methode zerlegen				
 					if(!StringZZZ.isEmpty(sObject)  && panelCascaded != null){
 						StringTokenizer tokenizermethod = new StringTokenizer(sObject, ".", false);
-						//TODO: Merke: ggf. sind mehrere Methoden, die aufeinander folgen möglich. Diese Aufsummierung fehlt noch.
+						//TODO: Merke: ggf. sind mehrere Methoden, die aufeinander folgen mï¿½glich. Diese Aufsummierung fehlt noch.
 						
 						String sAliasComponent = tokenizermethod.nextToken();
-						//4a. Die Komponente holen und JEXL verfügbar machen
+						//4a. Die Komponente holen und JEXL verfï¿½gbar machen
 						//???Object objComponent = panelCascaded.getComponent(sAliasComponent);
 						JComponent objComponent = panelCascaded.getComponent(sAliasComponent);
 						//JTextField objComponent = (JTextField) panelCascaded.getComponent(sAliasComponent);
@@ -313,7 +313,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 						
 						
 						
-	//					4ba. Die Formel erstellen, die dann durch JEXL aufgelöst werden kann
+	//					4ba. Die Formel erstellen, die dann durch JEXL aufgelï¿½st werden kann
 						String sMethodComponent = tokenizermethod.nextToken();
 						if(StringZZZ.isEmpty(sFormulaFilled)){
 							sFormulaFilled = sAliasComponent + "." + sMethodComponent + "()";
@@ -321,7 +321,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 							sFormulaFilled = sFormulaFilled + "+" + sAliasComponent + "." + sMethodComponent + "()";
 						}
 					}else if(!StringZZZ.isEmpty(sObject)  && panelCascaded == null){
-						//4bb. Die Formel erstellen für KONSTANTEN String					
+						//4bb. Die Formel erstellen fï¿½r KONSTANTEN String					
 						if(StringZZZ.isEmpty(sFormulaFilled)){
 							sFormulaFilled = sObject;
 						}else{
@@ -331,7 +331,7 @@ public class KernelUIExpressionZZZ extends KernelUseObjectZZZ{
 					System.out.println(ReflectCodeZZZ.getMethodCurrentName() + "# "+ (icountPart+1) + ". Part of evaluationformula: [" + sFormulaFilled + "]");
 			}//end for(... icountPart<=saExpressionPart.length-1; ...)
 				
-			//++++++++++++++  5. Durchführen der Berechnung			
+			//++++++++++++++  5. Durchfï¿½hren der Berechnung			
 			try {
 				Expression  expr = ExpressionFactory.createExpression(sFormulaFilled);							
 				sReturn = (String) expr.evaluate(jc);			
